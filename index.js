@@ -1,9 +1,9 @@
 import { chromium } from "playwright";
-import wait from "./src/lib/server/utils/wait.js";
-import Clearer from "./src/lib/server/helpers/clearer.js";
-import Usage, {createUsage, usageToMoney} from "./src/lib/server/utils/usage.js";
-import Coffees from "./src/lib/server/helpers/Coffees.js";
-import Paginator from "./src/lib/server/helpers/Paginator.js";
+import wait from "./server/utils/wait.js";
+import Clearer from "./server/helpers/Clearer.js";
+import Usage, {createUsage, usageToMoney} from "./server/utils/usage.js";
+import Coffees from "./server/helpers/Coffees.js";
+import Paginator from "./server/helpers/Paginator.js";
 let usage = createUsage();
 const browser = await chromium.launch({ headless: false });
 const page = await browser.newPage();
