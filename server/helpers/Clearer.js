@@ -14,13 +14,21 @@ export default class Clearer {
   static prompt = {
       role: "system",
       content: `
-        DO YOUR PROMPT HERE
-
-        Expected output
+        You are a helper that will help me to click on the right place in the screen, you need to look into a banners or cookies consent and allow it.
+        The main goal is to allow the cookies consent and close the banner.
+        Your work is find the cookie consent and get the coordinates.
+ 
+        If the cookie consent exists the expected output is:
+        Please take care and do a JSON parse, because I use JSON.
         {
           x: 100,
           y: 200
         }
+ 
+        Considerations:
+        Only return the JSON parsed object not the text, only the JSON parsed object.
+        if there is not a banner or cookies consent return null
+        If you are not sure about the click, return null.
       `,
     };
   

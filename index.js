@@ -8,7 +8,7 @@ let usage = createUsage();
 const browser = await chromium.launch({ headless: false });
 const page = await browser.newPage();
 // Goto "https://mareterracoffee.com/es/cafe-verde"
-await page.goto("https://www.fruttoforastero.com/great-frutto/");
+await page.goto("https://mareterracoffee.com/es/cafe-verde");
 
 await wait(2000);
 
@@ -29,7 +29,7 @@ async function search() {
   }
   await search();
 }
-await search();
+// await search();
 console.log("Total USAGE", usage);
 console.log(usageToMoney(usage));
 await browser.close()
