@@ -12,20 +12,16 @@ await page.goto("https://www.fruttoforastero.com/great-frutto/");
 
 await wait(2000);
 
-
-const clearer =  new Clearer();
-const paginatior = new Paginator();
-const coffees = new Coffees();
-const clear = await clearer.run(page);
+const clear = await Clearer.run(page);
 usage = await Usage(usage, clear.usage);
 console.log(usageToMoney(usage));
 async function search() {
   console.log("Running coffee")
-  const coffee = await coffees.run(page);
+  const coffee = await Coffees.run(page);
   usage = await Usage(usage, coffee.usage);
   console.log(usageToMoney(usage));
   console.log("Running paginator")
-  const pagination = await paginatior.run(page)
+  const pagination = await Paginator.run(page)
   usage = await Usage(usage, pagination.usage);
   console.log(usageToMoney(usage));
   if (pagination.end) {
